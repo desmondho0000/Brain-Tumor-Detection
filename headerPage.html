@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor Prediction</title>
+    <!-- link rel="stylesheet" href ={%static 'css/...'}-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    header {
+    background-color: white;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 0 10px 0 black;
+    position: fixed; /* Set the header to a fixed position */
+    top: 0; /* Place the header at the top of the viewport */
+    width: 100%; /* Full width */
+  }
+
+    header * {
+    display: inline;
+    }
+
+    header ul li {
+    margin: 20px;
+    float:left;
+    }
+
+    header ul li a {
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+
+
+    .front-Family{
+    font-family: Courier New;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 1.6;
+    color : #2167AE;
+
+    }
+
+    .login_size{
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    footer{
+      padding-top: 50px;
+      padding-bottom: 50px;
+      background-color: #91BFE3; 
+      text-align: center;
+    }
+    .fa {
+      padding: 20px;
+      font-size: 30px;
+      width: 50px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 2px;
+      border-radius: 50%;
+    }
+
+    .fa_facebook{
+      background-color: black;
+      color:white;
+    }
+    .fa_linkedin{
+      background-color: gray;
+      color:white;
+    }
+    .fa_instagram{
+      background-color: gray;
+      color:white;
+    }
+    .fa_github{
+      background-color: gray;
+      color:white;
+    }
+
+</style>
+</head>
+<body>
+  {% csrf_token %}
+    <header>
+      <nav>
+          <ul>
+              <li><a class="front-Family" href="/">Home</a></li>
+              {% if user.is_authenticated %}
+              <li><a class="front-Family"href="/predictImage">Detection</a></li>
+              <li><a class="front-Family"href="/userAcc">History</a></li>
+              <li style="float:right"><a class="front-Family"href="/logOut">LogOut</a></li>
+              <li style="float:right"><a class="front-Family"style="color: black; font-size: 20px; " >{{ request.session.username }}</a></li>
+              {% else %}
+              <li style="float:right"><a class="front-Family" class="login_size" href="/login">LogIn</a></li>
+              {% endif %}
+          </ul>
+      </nav>
+    </header>
+
+    <div> 
+        {%block content%}
+        
+        {% endblock %}
+    </div>
+
+    <footer>
+        <a href = "#" class="fa fa-facebook"></a>
+        <a href="https://linkedin.com/in/hoyungharng/" class="fa fa-linkedin"></a>
+        <a href="#" class="fa fa-instagram"></a>
+        <a href="https://github.com/desmondho0000/Prediction-Brain-Tumor.git" class="fa fa-github"></a>
+        <div>&copy;<span id="year"> </span><span> All rights reserved | Ho Yung Harng</span></div>
+       
+    </footer>
+</body>
+<script>
+   let year = document.querySelector("#year");
+
+   $(document).ready(function(){
+    year.innerText = new Date().getFullYear();
+   })
+
+
+</script>
+
+</html>

@@ -1,0 +1,83 @@
+{% extends 'headerPage.html' %}
+
+{% block content%}
+
+<style>
+  .container-fluid {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.bg-1 { 
+    background-color: #2167AE; 
+    color: #ffffff;
+}
+
+/*************************************************************************/
+main{
+    margin-left: 15%; 
+    margin-right: 15%;
+    margin-top: 50px
+}
+.front{
+    font-family: "ZurichSans-Light",Arial,sans-serif;
+    font-size: 30px;
+
+    color : #23366F;
+}
+.wrapper ul {
+    overflow: hidden;
+    margin: 0 -10px;
+    padding: 0;
+    list-style: none;
+  }
+.wrapper li {
+    float: left;
+    width: calc(33.333333% - 20px);
+    margin: 0 10px 20px 10px;
+  }
+
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+    padding: 24px 32px 10px;
+    text-align: center;
+    background-color: #f1f1f1;
+    width:20cm;
+    height:13cm ;
+}
+
+
+
+
+</style>
+<div class="container-fluid bg-1 text-center">
+    <h3 class="margin">Who Am I?</h3>
+    <img src="./media/slide1.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
+    <h3>I'm a Detection Brain Tumor Machine</h3>
+</div>
+
+
+  <main>
+    <h2 class="front">Detection Brain Tumor Accuracy ?</h2>
+    <div class="wrapper">
+        <ul>
+          <li class="card">
+            <p>The Brain Tumor is Detected.</p>
+              <img src="./media/Image214.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+
+          </li>
+          <li class="card">
+            <p>The Brain Tumor is not-Detected.</p>
+            <img src="./media/no.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+          </li>
+          <li class="card">
+            <p>The Brain Tumor is Detected.</p>
+            <img src="./media/Image3391.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+          </li>
+        </ul>
+    </div>
+
+</main>
+
+
+{% endblock %}
